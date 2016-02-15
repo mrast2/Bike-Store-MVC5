@@ -1,0 +1,39 @@
+﻿@model IEnumerable<BikeStore.NetAssissns.Models.Store>
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+<table style="width:100%">
+    <tr>
+        @foreach (var store in Model)
+        {
+
+            <td>
+                <h3>@store.Name</h3>
+                <address>
+                    @*One Microsoft Way<br />
+                    Redmond, WA 98052-6399<br />
+                    <abbr title="Phone">P:</abbr>
+                    425.555.0100*@
+                    <strong>City :</strong>@store.City<br />
+                    <strong>Address: </strong>@store.Address<br />
+                    <strong>Phone Number: </strong>@store.TelephoneNumber<br />
+                </address>
+                <address>
+                    <strong>Support:</strong>   <a href="mailto:rastogmk@mail.uc.edu">rastogmk@mail.uc.edu</a><br />
+                    <strong>Marketing:</strong> <a href="mailto:basakda@mail.uc.edu">rastogmk@mail.uc.edu</a><br />
+                    <strong>About Bikes:</strong> <a href="mailto:vashisrn@mail.uc.edu">rastogmk@mail.uc.edu</a>
+                </address>
+            </td>
+
+        }
+    </tr>
+</table>
+
+
+
+

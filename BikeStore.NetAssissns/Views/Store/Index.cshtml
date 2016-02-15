@@ -1,0 +1,14 @@
+﻿@model IEnumerable<BikeStore.NetAssissns.Models.Store>
+
+@{
+    ViewBag.Title = "Stores";
+}
+
+<h3>Browse Stores</h3>
+<p>Select from @Model.Count()</p>
+<ul>
+    @foreach (var store in Model)
+    {
+        <li>@Html.ActionLink(@store.Name, "Browse", new { store = store.Name })</li>
+    }
+</ul>

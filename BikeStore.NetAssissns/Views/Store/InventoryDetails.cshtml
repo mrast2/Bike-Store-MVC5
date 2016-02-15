@@ -1,0 +1,51 @@
+﻿@model BikeStore.NetAssissns.Models.Store
+
+@{
+    ViewBag.Title = "InventoryDetails";
+}
+
+<h2>Store: @Model.Name</h2>
+
+<div class="Store">
+    <table class="Store" border="1">
+        @foreach (var inventory in Model.StoreInventory)
+        {
+            <tr>
+                <td>
+                    <img alt="@inventory.Model" src="~/Content/Images/@string.Concat(inventory.SerialNumber, ".jpg")" height="120" width="150" />
+                    <br />
+                    <a href="@Url.Action("Details", new { id = inventory.SerialNumber })"></a>
+                </td>
+                <td>
+                    <p>
+                        <em>Brand:</em>
+                        @inventory.Brand
+                    </p>
+                    <p>
+                        <em>Model:</em>
+                        @inventory.Model
+                    </p>
+                    <p>
+                        <em>Description:</em>
+                        @inventory.Description
+                    </p>
+                    <p>
+                        <em>Price:</em>
+                        @String.Concat("$ ", String.Format("{0:F}", inventory.RecSellPrice))
+                    </p>
+                    <p>
+                        <em>Status:</em>
+                        @inventory.InventoryStatus
+                    </p>
+                    <p class="button">
+                        @if (!(inventory.InventoryStatus.ToString() == "Pending_Sale"))
+                        { 
+                            @*<a class="btn btn-default" href="@Url.Action("AddToCart", "Store", "Store1")"><i class="glyphicon glyphicon-log-in"></i> Add to cart</a>*@ 
+                            @Html.ActionLink("Add to cart", "AddToCart", "Store", new { serialNumber = inventory.SerialNumber, store = Model.Name }, null)    
+                        }                  
+                    </p>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

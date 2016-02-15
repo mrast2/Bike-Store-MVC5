@@ -1,0 +1,82 @@
+﻿@model IEnumerable<BikeStore.NetAssissns.Models.Inventory>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if(User.IsInRole("Manager"))
+    { 
+        @Html.ActionLink("Create New", "Create")
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.InventorySize)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InventoryCost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecSellPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventorySize)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Model)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InventoryCost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecSellPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SerialNumber }) <text>|</text>
+            @Html.ActionLink("Details", "Details", new { id=item.SerialNumber }) 
+            @if(User.IsInRole("Manager"))
+            {
+                <text>|</text>
+                @Html.ActionLink("Delete", "Delete", new { id=item.SerialNumber })
+            }
+        </td>
+    </tr>
+}
+
+</table>

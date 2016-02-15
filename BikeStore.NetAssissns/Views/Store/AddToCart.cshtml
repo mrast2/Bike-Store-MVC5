@@ -1,0 +1,24 @@
+﻿@model BikeStore.NetAssissns.Models.Inventory
+
+@{
+    ViewBag.Title = "AddToCart";
+}
+
+<h2>Create Order</h2>
+<html>
+<body>
+
+    <form>
+        Customer Name:<br>
+        <input type="text" name="firstname">
+        <br>
+        <div class="col-md-6 text-center">
+            <i class="glyphicon glyphicon-user" style="font-size: 5em;"></i>
+            <br />
+            <a class="btn btn-primary" href="@Url.Action("CreateOrder", "Order", new { id= Model.SerialNumber })"><i class="glyphicon glyphicon-plus"></i> Create an Account</a>
+        </div>
+    </form>
+
+</body>
+</html>
+

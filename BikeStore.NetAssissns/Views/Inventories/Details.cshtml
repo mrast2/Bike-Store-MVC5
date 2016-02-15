@@ -1,0 +1,82 @@
+﻿@model BikeStore.NetAssissns.Models.Inventory
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InventorySize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventorySize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecSellPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecSellPrice)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SerialNumber }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

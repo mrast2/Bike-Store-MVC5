@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Keep Pedaling</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="img-responsive img-thumbnail" src="~/Content/Images/StoreLogo.jpg" width="700"/>
+    </div>
+    <div class="col-md-6">
+        <h2>Available Bikes in each Store</h2>
+        <select onchange="window.location.href=this.value">
+            <option value="" selected="selected">Select a store</option>
+            <option value="~/Store/InventoryDetails?storeName=Store 1">Store 1</option>
+            <option value="~/Store/InventoryDetails?storeName=Store 2">Store 2</option>
+            <option value="~/Store/InventoryDetails?storeName=Store 3">Store 3</option>
+        </select>
+        <div class="panel panel-info" style="margin-top: 20px;">
+            <div class="panel-body bg-info">
+                <p>
+                    A store for all bike enthusiasts:
+                </p>
+                <ul>
+                    <li>Mountain Bikes</li>
+                    <li>BMX</li>
+                    <li>Hybrid</li>
+                    <li>Road</li>
+                    <li>Bikes for Children</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        <h2>Log-in for more details.</h2>
+        <div class="row">
+
+            <div class="col-md-6 text-center">
+                <i class="glyphicon glyphicon-user" style="font-size: 5em;"></i>
+                <br />
+                <a class="btn btn-primary" href="@Url.Action("register", "account")"><i class="glyphicon glyphicon-plus"></i> Create an Account</a>
+            </div>
+
+            <div class="col-md-6 text-center">
+                <i class="glyphicon glyphicon-envelope" style="font-size: 5em;"></i>
+                <br />
+                <a class="btn btn-default" href="@Url.Action("login", "account")"><i class="glyphicon glyphicon-log-in"></i> Sign in</a>
+            </div>
+
+        </div>
+
+    </div>
+</div>

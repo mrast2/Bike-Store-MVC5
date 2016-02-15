@@ -1,0 +1,88 @@
+﻿@model BikeStore.NetAssissns.Models.Inventory
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Inventory</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.InventorySize)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventorySize)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InventoryCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InventoryCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecSellPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecSellPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
